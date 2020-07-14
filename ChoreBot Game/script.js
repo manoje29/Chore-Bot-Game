@@ -11,6 +11,8 @@ let numClosedDoors = 3;
 let openDoor1;
 let openDoor2;
 let openDoor3;
+let currentCounter = 0;
+let highestCounter = 0;
 
 let startButton = document.getElementById('start');
 let currentlyPlaying = true;
@@ -89,8 +91,10 @@ let playDoor = door => {
 let gameOver = status => {
  if (status === 'win') {
  startButton.innerHTML = 'You win! Play again?';
+ currentCounter += 1;
  } else {
  startButton.innerHTML = 'Game over! Play again?';
+ currentCounter = 0;
  };
  currentlyPlaying = false; //This means when gameOver is called, currentlyPlaying is false, so the doors can't be clicked anymore. gameOver will be called when startButton's text changees - i.e. when isBot = true (as it shows the bot) or when numClosedDoors = 0.
 };
@@ -100,10 +104,43 @@ let startRound = () => {
   doorImage2.src = closedDoorPath;
   doorImage3.src = closedDoorPath;
   numClosedDoors = 3;
-  startButton.innerHTML = 'Good Luck';
+  startButton.innerHTML = 'Good Luck!';
   currentlyPlaying = true;
   randomChoreDoorGenerator();
+  currentStreak.innerHTML = `Current <br> Streak: <br> ${currentCounter}`;
+  if (currentCounter > highestCounter) {
+    highestCounter = currentCounter;
+  };
+  highestStreak.innerHTML = `Highest <br> Steak: <br> ${highestCounter}`;
+
 };
 
-
 randomChoreDoorGenerator();
+
+let currentStreak = document.getElementById('current-streak');
+let highestStreak = document.getElementById('highest-streak');
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
