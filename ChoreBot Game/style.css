@@ -5,7 +5,7 @@ body {
 
 header {
   background-color: #00ffff;
-  text-align: center; //Will work on images if parent div is referenced.
+  text-align: center; /*Will change the cursor to pointer once user hovers over image, indicating it can be selected.*/
 }
 
 .title-row {
@@ -42,10 +42,11 @@ header {
 
 .door-row {
   text-align: center;
+
 }
 
 #door1 {
-  cursor: pointer; //Will change the cursor to pointer once user hovers over image, indicating it can be selected.
+  cursor: pointer; /*Will change the cursor to pointer once user hovers over image, indicating it can be selected.*/
 }
 
 .door-frame {
@@ -53,16 +54,44 @@ header {
   padding: 10px;
 }
 
-.start-row {
-  margin: auto;
+
+#data {
+ font-family: 'Work Sans';
+ text-align: center;
+ width: 400px;
+ margin: 5 auto;
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+}
+
+#start {
   width: 120px;
-  height: 43px;
-  font-family: 'Work Sans';
+  height: 50px;
   background-color: #eb6536;
-  padding-top: 18px;
+  padding: 5px 10px;
   font-size: 18px;
   text-align: center;
   color: #010165;
-  margin-bottom: 21px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#current-streak, #highest-streak {
+ background-color: #00ffff;
+ display: flex;
+ align-items: center;
+ padding: 10px 20px;
+ height: 70px;
+ color: #010165;
+}
+
+#current-streak {
+  margin-right: 20px;
+}
+
+#highest-streak {
+  margin-left: 20px;
 }
